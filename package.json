@@ -1,0 +1,23 @@
+{
+  "name": "wings",
+  "version": "0.0.1",
+  "description": "wingsEngine",
+  "main": "./lib/server.js",
+  "bin": {
+    "wings": "./bin/wings.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cloud Le",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.9.1",
+    "commander": "^2.7.1",
+    "koa": "^0.18.1",
+    "lodash": "^3.5.0"
+  }
+}
