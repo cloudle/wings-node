@@ -1,0 +1,7 @@
+{
+  "ext": "coffee jade",
+  "watch": ["lib", "routes", "server"],
+  "execMap": {
+    "js": "node --harmony"
+  }
+}
