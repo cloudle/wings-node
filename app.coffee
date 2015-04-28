@@ -1,1 +1,2 @@
-require('./hi');
+require('./hi')
+require('./components/test.cjsx')

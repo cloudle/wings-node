@@ -11,42 +11,67 @@
   },
   "scripts": {
     "watch": "watchify app.coffee -o public/scripts/bundle.js -v",
-    "browserify": "browserify -t coffeeify --extension='.coffee' --debug app.coffee | uglifyjs > public/scripts/bundle.js",
+    "browserify": "browserify app.coffee | uglifyjs > public/scripts/bundle.js",
     "build": "npm run browserify ",
     "start": "nodemon server.js"
   },
   "author": "Cloud Le",
   "license": "ISC",
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "coffee-reactify",
+      "reactify",
+      "coffeeify"
+    ]
+  },
+  "browser": {
+    "underscore": "backbone/node_modules/underscore",
+    "plugin": "./src/javascript/vendor/jquery-plugin.js"
+  },
+  "browserify-shim": {
+    "plugin": {
+      "exports": "plugin",
+      "depends": [
+        "jquery:$"
+      ]
+    }
+  },
+  "devDependencies": {
+    "coffee-script": "1.9.2",
+    "coffeeify": "0.4.1",
+    "browserify-shim": "^3.8.2",
+    "coffee-reactify": "3.0.0",
+    "commander": "^2.7.1",
+    "browserify": "~6.0.3",
+    "watchify": "^3.1.1",
+    "nodemon": "^1.3.7",
+    "reactify": "~0.14.0",
+    "uglify-js": "~2.4.15",
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.4",
+    "gulp-notify": "^2.2.0",
+    "vinyl-source-stream": "1.1.0",
+    "lodash": "^3.3.1",
+    "pretty-hrtime": "~1.0.0",
+    "require-dir": "^0.1.0",
+    "merge-stream": "^0.1.7",
+    "browser-sync": "~2.2.2",
+    "react-tools": "~0.12.0",
+    "node-cjsx": "^1.0.0",
+    "node-jsx": "~0.11.0"
+  },
   "dependencies": {
+    "jquery": "~2.1.0",
     "koa": "^0.18.1",
     "koa-jade": "1.0.1",
     "koa-router": "4.3.2",
     "koa-static": "1.4.9",
+    "socket.io": "^1.3.5",
     "lodash": "^3.5.0",
+    "backbone": "~1.1.2",
     "mongoskin": "1.4.13",
-    "node-jsx": "~0.11.0",
     "ntwitter": "^0.5.0",
-    "react": "~0.11.2",
-    "socket.io": "^1.3.5"
-
-  },
-  "devDependencies": {
-    "coffee-script": "^1.9.2",
-    "commander": "^2.7.1",
-    "browserify": "~6.0.3",
-    "nodemon": "^1.3.7",
-    "reactify": "~0.14.0",
-    "uglify-js": "~2.4.15",
-    "watchify": "^3.1.1",
-    "coffeeify": "",
-    "gulp": "^3.8.11",
-    "gulp-util": "^3.0.4",
-    "vinyl-source-stream": "",
-    "underscore": ""
-  },
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
+    "react": "~0.11.2"
   }
 }
