@@ -3,12 +3,12 @@ jadeGlobal = {}
 
 module.exports = (app) ->
   app.use jade.middleware
-    viewPath: "./views"
+    viewPath: "./app/views"
     debug: false
     pretty: false
     compileDebug: false
     locals: jadeGlobal
-    basedir: "./views"
+    basedir: "./app/views"
 #    helperPath: [
 #      "#{__dirname}/views/helpers"
 #    ]

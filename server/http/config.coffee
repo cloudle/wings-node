@@ -1,10 +1,10 @@
 fs = require('fs')
 
 loadRoutes = (router) ->
-  fs.readdirSync('./routes/').forEach (file) ->
+  fs.readdirSync('./app/routes/').forEach (file) ->
     console.log 'loading..'
     nameWithoutExtension = file.substr 0, file.indexOf('.')
-    route = "../../routes/#{nameWithoutExtension}"
+    route = "../../app/routes/#{nameWithoutExtension}"
     console.log("Adding route: #{nameWithoutExtension}")
     require(route)(router)
 

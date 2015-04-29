@@ -20,9 +20,7 @@
   "browserify": {
     "transform": [
       "browserify-shim",
-      "coffee-reactify",
-      "reactify",
-      "coffeeify"
+      "coffee-reactify"
     ]
   },
   "browser": {
@@ -72,6 +70,7 @@
     "backbone": "~1.1.2",
     "mongoskin": "1.4.13",
     "ntwitter": "^0.5.0",
-    "react": "~0.11.2"
+    "react": "~0.13.2",
+    "react-router": "~0.13.2"
   }
 }

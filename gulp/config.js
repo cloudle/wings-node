@@ -1,5 +1,5 @@
 var dest = "./public/scripts";
-var src = './';
+var src = './app';
 
 module.exports = {
   browserSync: {
